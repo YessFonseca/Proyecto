@@ -1,0 +1,69 @@
+{% extends "base.html" %}
+{% load widget_tweaks %}
+
+{% block body %}
+
+<div class="card  m-3">
+    <div class="card-header card-info">
+        Actualizar Información
+    </div>
+
+    <div class="card-body">
+
+        <form method="post">
+            {% csrf_token %}
+            <div class="container m-3">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="{{ form_trab.nombre.id_for_label }}">Nombre</label>
+                            {% render_field form_trab.nombre class="form-control" %}
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="{{ form_trab.carnet_identidad.id_for_label }}">Carnet de Identidad</label>
+                            {% render_field form_trab.carnet_identidad class="form-control" %}
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="form-group">
+                            <label for="{{ form_trab.direccion.id_for_label }}">Dirección</label>
+                            {% render_field form_trab.direccion class="form-control" %}
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="{{ form_trab.nivel_escolaridad.id_for_label }}">Nivel Escolaridad</label>
+                            {% render_field form_trab.nivel_escolaridad class="form-control" %}
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="{{ form_trab.categoria_docente.id_for_label }}">Categoría Docente</label>
+                            {% render_field form_trab.categoria_docente class="form-control" %}
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="{{ form_trab.categoria_cientifica.id_for_label }}">Categoría Científica</label>
+                            {% render_field form_trab.categoria_cientifica class="form-control" %}
+                        </div>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary">Actualizar</button>
+                <a href="{% url "list_trab" %}" class="btn btn-danger">Cancelar</a>
+            </div>
+        </form>
+    </div>
+</div>
+{% block assets %}
+
+    {% endblock %}
+{% endblock body %}

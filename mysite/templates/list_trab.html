@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+
+
+
+{% block body %}
+
+    <div class="container">
+        <br> 
+<a href="{% url "crear_trabajador" %}" class=" m-3 p-2 btn btn-primary">Adicionar</a>
+<hr>
+        <table class="table" style="border-collapse: collapse; width:  100%;">
+            <thead class="thead-light">
+                <tr>
+                    
+                    <th scope="col" style="border:  1px solid black;">Nombre</th>
+                    <th scope="col" style="border:  1px solid black;">Carnet de Identidad</th>
+                    <th scope="col" style="border:  1px solid black;">Dirección</th>
+                    <th scope="col" style="border:  1px solid black;">Nivel Escolaridad</th>
+                    <th scope="col" style="border:  1px solid black;">Categoría Docente</th>
+                    <th scope="col" style="border:  1px solid black;">Categoría Científica</th>
+                    <th scope="col" style="border:  1px solid black;">Opciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for trabajador in trabajadores %}
+                    <tr>
+                        
+                        <td style="border:  1px solid black;">{{ trabajador.nombre }}</td>
+                        <td style="border:  1px solid black;">{{ trabajador.carnet_identidad }}</td>
+                        <td style="border:  1px solid black;">{{ trabajador.direccion }}</td>
+                        <td style="border:  1px solid black;">{{ trabajador.nivel_escolaridad }}</td>
+                        <td style="border:  1px solid black;">{{ trabajador.categoria_docente }}</td>
+                        <td style="border:  1px solid black;">{{ trabajador.categoria_cientifica }}</td>
+                        <td style="border:  1px solid black;">
+                            <a href="{% url "editar_trabajador" trabajador.pk %}" class="btn btn-warning">Editar</a>
+                            <a href="{% url "eliminar_trabajador" trabajador.pk%}" class="btn btn-danger">Eliminar</a>
+
+                        </td>
+
+                        
+                        
+                    </tr>
+                {% endfor %}
+            </tbody>
+        
+        </table>
+    </div>
+
+    {% block assets %}
+
+    {% endblock %}
+    
+{% endblock %}
+
+
+
+

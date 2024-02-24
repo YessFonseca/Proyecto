@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es" class="h-100">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <link rel="icon" href="{% static 'img/empty.png' %}" type="image/png"/>
+        <title>{{ title }}</title>
+       
+        <!-- Bootstrap 4 -->
+        <link href="{% static 'bootstrap-4.0.0/dist/css/bootstrap.min.css' %}" rel="stylesheet"/>
+
+        
+        <style>
+            .toast-message {
+            color: black;
+            }
+        </style>
+        <script>
+            
+        </script>
+
+                
+
+        {% block head %}
+    
+        {% endblock %}
+    </head>
+{% block body %}
+    <body class="d-flex flex-column h-100">
+
+       
+
+    </body>
+
+    {% block assets %}
+
+    {% endblock %}
+    
+{% endblock %}
